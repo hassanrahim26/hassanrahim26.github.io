@@ -34,10 +34,32 @@ same commands.
 ## Examples of NewSQL database systems
 
 - CockroachDB
+- Google Spanner
 - VoltDB
 - NuoDB
-- SingleStore
+- TiDB
 - Clustrix
+- YugabyteDB
+
+## Real-World Examples: Who Uses NewSQL?
+
+Some well-known companies are using NewSQL to power their high-growth applications, taking advantage of both reliability and scalability.
+
+- **Slack**
+  - **Database:** CockroachDB
+  - **Use Case:** Slack relies on CockroachDB for messaging, ensuring fast, reliable data for millions of active users.
+
+- **Deutsche Bank**
+  - **Database:** YugabyteDB
+  - **Use Case:** Deutsche Bank uses YugabyteDB to improve its banking operations, speeding up transaction processing.
+
+- **Spotify**
+  - **Database:** Google Cloud Spanner
+  - **Use case:** Spotify uses Google Cloud Spanner to manage its user data and playlists, ensuring high availability and scalability as millions of users stream music simultaneously.
+
+- **Expedia**
+  - **Database:** TiDB
+  - **Use Case:** Expedia uses TiDB to support its travel booking platform, managing millions of transactions each day with real-time data.
 
 ```tsql
 CREATE TABLE IF NOT EXISTS accounts (id INT PRIMARY KEY, balance INT);
