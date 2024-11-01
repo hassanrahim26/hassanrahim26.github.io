@@ -70,13 +70,14 @@ Once installed, you can access CockroachDB through the command-line interface (C
 
 Now that you’re set up, let’s write some queries with CockroachDB.
 
-- Start the CockroachDB Cluster
+- **Start the CockroachDB Cluster**
   ```tsql
   sudo cockroach start-single-node --insecure --store=/var/lib/cockroach --listen-addr=localhost:26257 --http-addr=localhost:8080
   ```
   This command starts a single-node instance of CockroachDB.
 
-- Access the SQL Shell
+
+- **Access the SQL Shell**
   
   Open a new terminal window and connect to the CockroachDB SQL shell using:
   ```tsql
@@ -84,41 +85,44 @@ Now that you’re set up, let’s write some queries with CockroachDB.
   ```
   This command connects you to the SQL shell where you can execute SQL queries.
 
-- Create your first database
+
+- **Create your first database**
   ```tsql
   CREATE DATABASE online_store;
   ```
-- Switch to your database
+  
+- **Switch to your database**
   ```tsql
   USE online_store;
   ```
-- Creating Tables
+  
+- **Creating Tables**
   - Create a products table
     ```tsql
     CREATE TABLE products (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    name STRING NOT NULL,
-    price DECIMAL(10,2),
-    stock_count INT,
-    last_updated TIMESTAMP DEFAULT current_timestamp()
+      id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+      name STRING NOT NULL,
+      price DECIMAL(10,2),
+      stock_count INT,
+      last_updated TIMESTAMP DEFAULT current_timestamp()
     );
     ```
   - Create a customers table
     ```tsql
     CREATE TABLE customers (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    email STRING UNIQUE,
-    name STRING,
-    created_at TIMESTAMP DEFAULT current_timestamp()
+      id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+      email STRING UNIQUE,
+      name STRING,
+      created_at TIMESTAMP DEFAULT current_timestamp()
     );
     ```
   - Create an orders table
     ```tsql
     CREATE TABLE orders (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    customer_id UUID REFERENCES customers(id),
-    total_amount DECIMAL(10,2),
-    order_date TIMESTAMP DEFAULT current_timestamp()
+      id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+      customer_id UUID REFERENCES customers(id),
+      total_amount DECIMAL(10,2),
+      order_date TIMESTAMP DEFAULT current_timestamp()
     );
     ```
   - Show tables
@@ -127,7 +131,8 @@ Now that you’re set up, let’s write some queries with CockroachDB.
     ```
     <img width="1440" alt="Screenshot 2024-11-01 at 9 18 51 PM" src="https://github.com/user-attachments/assets/e7b92746-2465-49e8-88c7-b583bf55988c">
 
-- Basic Data Operations
+
+- **Basic Data Operations**
   - Insert sample products
     ```tsql
     INSERT INTO products (name, price, stock_count) VALUES
@@ -135,24 +140,44 @@ Now that you’re set up, let’s write some queries with CockroachDB.
         ('Smartphone', 499.99, 100),
         ('Headphones', 79.99, 200);
     ```
+    ```tsql
+    SELECT * FROM products;
+    ```
+    ![photo_5_2024-11-01_22-23-32](https://github.com/user-attachments/assets/df02b70e-7493-4150-b2e3-95d1819028c2)
+    
   - Insert a customer
     ```tsql
     INSERT INTO customers (email, name) VALUES
         ('john@example.com', 'John Doe'),
         ('jane@example.com', 'Jane Smith');
     ```
-  - View your data
-    ```tsql
-    SELECT * FROM products;
-    ```
-    <img width="1440" alt="Screenshot 2024-11-01 at 8 14 46 PM" src="https://github.com/user-attachments/assets/17779b04-b13c-4dd5-94aa-0a0b2cada475">
-    
     ```tsql
     SELECT * FROM customers;
     ```
-    <img width="1440" alt="Screenshot 2024-11-01 at 8 15 12 PM" src="https://github.com/user-attachments/assets/f123216c-5b73-42ce-826c-061a6d2e2b15">
+    ![photo_7_2024-11-01_22-23-32](https://github.com/user-attachments/assets/98315033-8eda-4c9d-b181-82eeda6a29d6)
 
-- Transaction Example
+  - Update a customer
+    ```tsql
+    UPDATE customers
+      SET email = 'jane@xyz.com'
+      WHERE id = 'b0ad55ff-4894-4959-8883-d6e651daeaae';
+    ```
+    ```tsql
+    SELECT * FROM customers;
+    ```
+    ![photo_1_2024-11-01_22-23-32](https://github.com/user-attachments/assets/08ffc9d6-e77b-4de7-ae49-716e80320ee4)
+
+  - DELETE a product
+    ```tsql
+    DELETE FROM products WHERE id = '8baa470f-094f-49e1-a0d2-0fb65303edcc'
+    ```
+    ```tsql
+    SELECT * FROM products;
+    ```
+    ![Screenshot from 2024-11-01 23-02-07](https://github.com/user-attachments/assets/3770321e-59ad-4ceb-b876-12b44b3e2dda)
+
+    
+- **Transaction Example**
   - Start a transaction for placing an order
     ```tsql
     BEGIN;
@@ -180,6 +205,14 @@ Now that you’re set up, let’s write some queries with CockroachDB.
     ```tsql
     SELECT * FROM orders;
     ```
+    ![photo_6_2024-11-01_22-23-32](https://github.com/user-attachments/assets/53cce887-f9b5-46dd-a21a-697e856b7bf6)
+
     ```tsql
     SELECT name, stock_count FROM products WHERE name = 'Laptop';
     ```
+    ![photo_8_2024-11-01_22-23-32](https://github.com/user-attachments/assets/239127fc-0051-4332-a6b3-b611029b7e29)
+
+## Conclusion
+In this blog, we looked at CockroachDB, a powerful NewSQL database that combines the strengths of SQL and NoSQL. Its ability to scale easily while ensuring data consistency makes it ideal for modern applications. 
+
+As you continue to explore CockroachDB, consider using its advanced features like geo-partitioning and automatic scaling to enhance your projects. Whether you're working on a small app or a large system, CockroachDB has the tools to help you succeed. Happy coding!
