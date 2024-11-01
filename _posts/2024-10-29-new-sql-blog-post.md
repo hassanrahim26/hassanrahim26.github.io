@@ -31,8 +31,8 @@ mind because of its strong data consistency.
 - **Easy Learning Curve:** If you already know SQL, working with NewSQL is easy because it uses the
 same commands.
 
-## Examples of NewSQL database systems
-![](https://miro.medium.com/v2/resize:fit:720/format:webp/1*MKTAKtCkjgdi94d4KfnVlg.jpeg)
+## Some examples of NewSQL database systems
+
 - CockroachDB
 - Google Spanner
 - VoltDB
@@ -43,22 +43,19 @@ same commands.
 
 ## Real-World Examples: Who Uses NewSQL?
 
-Companies like Slack, Spotify, and Expedia rely on NewSQL to power their high-growth applications. With its exceptional scalability and consistency, NewSQL unlocks exciting possibilities for a variety of industries.
+Some well-known companies are using NewSQL to power their high-growth applications, taking advantage of both reliability and scalability.
 
 - **Slack**
   - **Database:** CockroachDB
   - **Use Case:** Slack relies on CockroachDB for messaging, ensuring fast, reliable data for millions of active users.
 
-
 - **Deutsche Bank**
   - **Database:** YugabyteDB
   - **Use Case:** Deutsche Bank uses YugabyteDB to improve its banking operations, speeding up transaction processing.
 
-
 - **Spotify**
   - **Database:** Google Cloud Spanner
   - **Use case:** Spotify uses Google Cloud Spanner to manage its user data and playlists, ensuring high availability and scalability as millions of users stream music simultaneously.
-
 
 - **Expedia**
   - **Database:** TiDB

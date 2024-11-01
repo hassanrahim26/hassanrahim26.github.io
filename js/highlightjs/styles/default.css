@@ -8,7 +8,7 @@ Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
   display: block;
   overflow-x: auto;
   padding: 0.5em;
-  background: rgb(37, 38, 38);
+  background: #F0F0F0;;
 }
 
 
@@ -46,7 +46,7 @@ Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
   color: #880000;
 }
 
-.hljs-title,
+.hljs-title ,
 .hljs-section {
   color: #880000;
   font-weight: bold;
