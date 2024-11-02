@@ -8,6 +8,8 @@ To solve this, NoSQL databases were created. These databases are great for handl
 
 NewSQL combines the advantages of SQL and NoSQL, offering both strong data consistency and the ability to handle large amounts of data.
 
+![Screenshot from 2024-11-02 09-58-55](https://github.com/user-attachments/assets/1dc3f8a9-1eb0-4091-87ec-c0744017ce78)
+
 Here’s why NewSQL stands out:
 
 - **Scalability (Can Grow Easily):** Like NoSQL, NewSQL databases spread data across multiple servers, allowing them to grow with data needs.
@@ -19,6 +21,8 @@ Here’s why NewSQL stands out:
 - **Flexible Deployment:** NewSQL databases can run both in the cloud and on-site, giving companies more control. This is ideal for businesses that need tight security or low data delay (latency).
 
 ## Is NewSQL Right for You?
+
+![Screenshot from 2024-11-02 09-59-25](https://github.com/user-attachments/assets/28f8605c-1466-4d49-9554-b608410235b0)
 
 NewSQL might be a good choice if you need:
 
@@ -212,7 +216,7 @@ Now that you’re set up, let’s write some queries with CockroachDB.
     ```
     ![photo_8_2024-11-01_22-23-32](https://github.com/user-attachments/assets/239127fc-0051-4332-a6b3-b611029b7e29)
 
-  As you continue exploring CockroachDB, you might want to dive deeper into advanced features like geo-partitioning, fault tolerance, and advanced indexing. You can find more resources in the [CockroachDB documentation](https://www.cockroachlabs.com/docs/].)
+  As you continue exploring CockroachDB, you might want to dive deeper into advanced features like geo-partitioning, fault tolerance, and advanced indexing. You can find more resources in the [CockroachDB documentation](https://www.cockroachlabs.com/docs)
 
 ## Conclusion
 In this blog, we explored NewSQL and its ability to bridge the gap between traditional SQL and NoSQL. NewSQL databases, like CockroachDB, provide the scalability of NoSQL with the consistency and reliability of SQL, making them a perfect choice for modern, data-driven applications. With NewSQL, you don’t have to choose between scaling your data and keeping it accurate—NewSQL offers both. 
