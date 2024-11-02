@@ -23,8 +23,9 @@ theme: "minima"
 #rss: rss
 
 kramdown:
+  syntax_highlighter: rouge
   syntax_highlighter_opts:
-    disable: true
+    css_class: 'highlight'
     
 plugins:
   - jekyll-feed
